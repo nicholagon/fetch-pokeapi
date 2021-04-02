@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+	
+body {
+	background: #eee;
+	font: 15px 'Spartan', Arial, sans-serif;
+	line-height: 22px;
+}
+header {
+	background:burlywood;
+	padding: 10px 0;
+	height: 10vh;
+}
+
+header img {
+	width: 100%;
+}
+
+header h1 {
+	padding-top: 30px;
+	color: #eee;
+}
+main {
+	padding: 50px 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+hr {
+	display:none;
+}
+
+.clearfix {
+	clear: both;
+}
+.wrapper {
+	width: 80%;
+	margin: auto;
+}
+
+.card {
+	background: #fff;
+	/* border: 1px solid black; */
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px 0;
+	box-shadow: 0 5px 5px 3px #ccc;
+	display: flex;
+	flex-direction: row;
+}
+
+.sprite {
+	/* float: left; */
+	display: block;
+}
+
+.pokemon-info {
+	margin: 20px 0 0 5px;
+	/* float: left; */
+}
+
+.pokemon-id {
+	color: burlywood;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.pokemon-name {
+	color:burlywood;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.other-details li{
+	float: left;
+	margin-right: 10px;
+	color: hsl(180, 8%, 52%);
+	/* font-weight: 500; */
+	font-size: 12px;
+	
+}
+
+.tags-container {
+	float: right;
+}
+
+.tags li {
+	margin-top: 40px;
+	margin-right: 10px;
+	padding: 0 5px;
+	float: left;
+	font-size: 12px;
+	background: hsl(180, 52%, 96%);
+	border: 0;
+	border-radius: 3px;
+	color: burlywood;
+	font-weight: 700;
+	
+}
+
+@media (max-width: 1000px) {
+	.tags-container {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		border-top: 1px solid hsl(180, 8%, 52%);
+	}
+}
+
+@media (max-width:600px) {
+	.card {
+		position: relative;
+	}
+	.company-logo {
+		width: 50px;
+		display: block;
+		float: none;
+		position: absolute;
+		top: -20px;
+	}
+	.tags-container {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		border-top: 1px solid hsl(180, 8%, 52%);
+	}
+	
+	
+}
+
+/* .card-text {
+	float: left;
+}
+ */
+
+
+/* .card-tags {
+	float: right;
+}
+
+.card-tags li {
+	float: left;
+	padding: 5px;
+	margin: 0px 15px;
+	background: hsl(180, 52%, 96%);
+	border: 0;
+	border-radius: 3px;
+	color: hsl(180, 29%, 50%);
+	font-weight: 700;
+} */
