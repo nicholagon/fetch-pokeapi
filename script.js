@@ -19,14 +19,21 @@ function generateItem(item, index) {
 
   const article = createElementWithClass('article','card');
 
-  const sprite = createElementWithClass('img','sprite');
+  const spriteDiv = createElementWithClass('div','sprite');
+  const sprite = document.createElement('img');
   sprite.setAttribute('src', `${sprite_default}`);
+  spriteDiv.append(sprite);
 
   const mainInfo = renderMainInfo(id, name, height, weight);
 
   const buttonContainer = createElementWithClass('div', 'button-container');
 
   const abilityBtnDiv = createElementWithClass('div', 'abilities-container');
+
+  const abilityHeading = document.createElement('h4');
+  abilityHeading.innerText = 'Abilities:';
+  abilityBtnDiv.append(abilityHeading);
+
   abilityButtons.forEach(button => {
     const buttonElement = createElementWithClass('button', 'filter-button', 'ability');
 
@@ -36,6 +43,9 @@ function generateItem(item, index) {
   })
 
   const typeBtnDiv = createElementWithClass('div', 'types-container');
+  const typeHeading = document.createElement('h4');
+  typeHeading.innerText = 'Type:';
+  typeBtnDiv.append(typeHeading);
   typeButtons.forEach(button => {
     const buttonElement = createElementWithClass('button', 'filter-button', 'types');
 
@@ -47,7 +57,7 @@ function generateItem(item, index) {
   buttonContainer.appendChild(typeBtnDiv);
   buttonContainer.appendChild(abilityBtnDiv);
   
-  article.append(sprite, mainInfo, buttonContainer)
+  article.append(spriteDiv, mainInfo, buttonContainer)
 
   return article;
 
@@ -58,23 +68,21 @@ function renderMainInfo(id, name, height, weight) {
 
   const pokeId = createElementWithClass('li','pokemon-id');
   pokeId.innerText = `#${id}`;
-  mainInfo.appendChild(pokeId);
 
   const pokemonName = createElementWithClass('li','pokemon-name');
   pokemonName.innerText = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
-  mainInfo.appendChild(pokemonName);
 
   const otherDetails = createElementWithClass('ul','other-details');
   
   const heightData = createElementWithClass('li');
   heightData.innerText = `Height: ${height*10} cm`
-  otherDetails.appendChild(heightData);
   
   const weightData = createElementWithClass('li');
   weightData.innerText = `Weight: ${weight/10} kg`
-  otherDetails.appendChild(weightData);
   
-  mainInfo.appendChild(otherDetails);
+  otherDetails.append(heightData, weightData);
+  
+  mainInfo.append(pokeId, pokemonName, otherDetails);
 
   return mainInfo;
 }
@@ -92,7 +100,7 @@ async function App() {
 
   let pokemonList = [];
   
-  for(let i = 1; i <= 150; i++) {
+  for(let i = 1; i <= 151; i++) {
     pokemonList.push(
       fetch('https://pokeapi.co/api/v2/pokemon/' + i)
       .then(response => response.json())
