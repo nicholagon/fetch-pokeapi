@@ -4,7 +4,7 @@
 }
 	
 body {
-	background: #eee;
+	background: rgb(245, 242, 238);
 	font: 15px 'Spartan', Arial, sans-serif;
 	line-height: 22px;
 }
@@ -51,6 +51,7 @@ hr {
 	box-shadow: 0 5px 5px 3px #ccc;
 	display: flex;
 	flex-direction: row;
+	/* justify-content: space-between; */
 }
 
 .sprite {
@@ -61,6 +62,7 @@ hr {
 .pokemon-info {
 	margin: 20px 0 0 5px;
 	/* float: left; */
+	flex: 2 1 auto;
 }
 
 .pokemon-id {
@@ -70,8 +72,8 @@ hr {
 }
 
 .pokemon-name {
-	color:burlywood;
-	font-size: 16px;
+	color: burlywood;
+	font-size: 20px;
 	font-weight: 700;
 }
 
@@ -80,11 +82,33 @@ hr {
 	margin-right: 10px;
 	color: hsl(180, 8%, 52%);
 	/* font-weight: 500; */
-	font-size: 12px;
+	font-size: 13px;
 	
 }
 
-.tags-container {
+.button-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter-button {
+	margin: 0 10px;
+	border-radius: 5px;
+	border: 0;
+	padding: 5px;
+}
+
+.ability, .types {
+	background:  rgb(245, 242, 238);
+	/* outline-color: rgb(245, 242, 238); */
+	outline-color: burlywood;
+	color: burlywood;
+	font-weight: 700;
+	font-size: 14px;
+	/* text-transform: uppercase; */
+}
+
+/* .tags-container {
 	float: right;
 }
 
@@ -100,7 +124,7 @@ hr {
 	color: burlywood;
 	font-weight: 700;
 	
-}
+} */
 
 @media (max-width: 1000px) {
 	.tags-container {
